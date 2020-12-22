@@ -11,8 +11,8 @@ uses
 {$R *.res}
 
 var
-	ip: Integer;
-	verbose: Boolean;
+  ip: Integer;
+  verbose: Boolean;
   folder: String;
   folderJava: String;
   folderJavaInside: String;
