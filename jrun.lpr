@@ -68,14 +68,17 @@ begin
   WriteLn('of:');
   WriteLn('Java: ' + execJava);
   WriteLn('Jar: ' + execJar);
+  proc := TProcess.Create(nil);
+  proc.Executable := execJava;
+  proc.Parameters.Add('-jar');
+  proc.Parameters.Add(execJar);
+  proc.Parameters.Add('-Duser.dir');
+  proc.Parameters.Add(folder);
+  proc.ShowWindow := swoHIDE;
+  for ip := 1 to ParamCount do begin
+    proc.Parameters.Add(ParamStr(ip));
+  end;
   if verbose then begin
-    proc := TProcess.Create(nil);
-    proc.Executable := execJava;
-    proc.Parameters.Add('-jar');
-    proc.Parameters.Add(execJar);
-    proc.Parameters.Add('-Duser.dir');
-    proc.Parameters.Add(folder);
-    proc.ShowWindow := swoHIDE;
     proc.Options := [poWaitOnExit, poUsePipes, poStderrToOutPut];
     proc.Execute;
     while (proc.Running) or (proc.Output.NumBytesAvailable > 0) do begin
@@ -89,13 +92,6 @@ begin
       end;
     end;
   end else begin
-    proc := TProcess.Create(nil);
-    proc.Executable := execJava;
-    proc.Parameters.Add('-jar');
-    proc.Parameters.Add(execJar);
-    proc.Parameters.Add('-Duser.dir');
-    proc.Parameters.Add(folder);
-    proc.ShowWindow := swoHIDE;
     proc.Options := [poNoConsole];
     proc.Execute;
     halt(0);
