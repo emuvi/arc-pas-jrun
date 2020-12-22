@@ -74,7 +74,6 @@ begin
   proc.Parameters.Add(execJar);
   proc.Parameters.Add('-Duser.dir');
   proc.Parameters.Add(folder);
-  proc.ShowWindow := swoHIDE;
   for ip := 1 to ParamCount do begin
     proc.Parameters.Add(ParamStr(ip));
   end;
