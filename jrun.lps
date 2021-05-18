@@ -4,16 +4,20 @@
     <PathDelim Value="\"/>
     <Version Value="11"/>
     <BuildModes Active="Default"/>
-    <Units Count="4">
+    <Units Count="2">
       <Unit0>
         <Filename Value="jrun.lpr"/>
         <IsPartOfProject Value="True"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="10"/>
-        <CursorPos X="18" Y="23"/>
+        <TopLine Value="25"/>
+        <CursorPos X="48" Y="59"/>
         <UsageCount Value="22"/>
         <Loaded Value="True"/>
       </Unit0>
+      <Unit1>
+        <Filename Value=""/>
+        <UsageCount Value="10"/>
+      </Unit1>
     </Units>
     <JumpHistory HistoryIndex="-1"/>
     <RunParams>

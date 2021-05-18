@@ -25,7 +25,7 @@ var
 begin
   verbose := false;
   for ip := 0 to ParamCount do begin
-    if (ParamStr(ip) = '--verbose') or (ParamStr(ip) = '-v') then begin
+    if (ParamStr(ip) = '--verbose') or (ParamStr(ip) = '-V') then begin
       verbose := true;
     end;
   end;
